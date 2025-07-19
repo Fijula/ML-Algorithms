@@ -1,0 +1,34 @@
+RNN (Recurrent Neural Network) / LSTM (Long Short-Term Memory)
+
+🔍 What it is:
+A neural network where output from previous steps feeds into the current step, giving it memory.
+
+Useful for sequential data like text or time series.
+LSTM is a type of RNN that solves the vanishing gradient problem, so it remembers information over long sequences.
+🧠 Diagram:
+Input_t1 → [Memory_1] → Input_t2 → [Memory_2] → ... → Output
+🌍 Real-life Examples:
+Text prediction (e.g., auto-complete)
+Language translation (e.g., Google Translate)
+Stock forecasting
+Speech-to-text
+👨‍💻 Code:
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+import numpy as np
+
+# Dummy time-series data
+X = np.random.rand(100, 10, 1)  # (samples, time_steps, features)
+y = np.random.rand(100, 1)
+
+model = Sequential([
+    LSTM(64, input_shape=(10, 1)),
+    Dense(1)
+])
+
+model.compile(optimizer='adam', loss='mse')
+model.fit(X, y, epochs=3)
+✅ When to Use:
+Time series forecasting
+Text generation or classification
+Sequence prediction
