@@ -1,0 +1,21 @@
+PCA (Principal Component Analysis)
+🔍 What it is:
+
+Reduces dimensions by projecting data onto fewer axes that capture the most variance.
+Great for visualizing high-dimensional data.
+📈 Diagram:
+
+High-D (3D) → Lower-D (2D)
+[●●●→]  =>  [●●●→]
+🌍 Real-life Example:
+
+Summarizing a 1000-feature document into just 2 or 3 important topics.
+Compressing images.
+👨‍💻 Code:
+
+from sklearn.decomposition import PCA
+import numpy as np
+
+X = np.array([[1, 2], [3, 4], [5, 6]])
+pca = PCA(n_components=1)
+print("Reduced Data:", pca.fit_transform(X))
