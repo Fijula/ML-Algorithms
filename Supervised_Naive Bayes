@@ -1,0 +1,28 @@
+
+🔍 What It Is:
+A probabilistic classifier based on Bayes’ Theorem.
+Assumes all features are independent (naive).
+Uses probabilities of features belonging to classes.
+💡 Real-Life Example:
+Email spam detection: If an email contains “free”, “money”, “win”, it’s probably spam.
+✅ Python Code:
+from sklearn.naive_bayes import GaussianNB
+
+X = [[1,20],[2,21],[3,22]]
+y = [0,1,0]
+
+model = GaussianNB()
+model.fit(X, y)
+
+print(model.predict([[2, 20]]))  # Predicts class
+🧮 Diagram (Simplified Logic):
+P(Class=Spam | “Free”) = High
+P(Class=Not Spam | “Free”) = Low
+→ Predict: Spam
+✅ Pros:
+Fast and efficient
+Great for text classification (spam, sentiment)
+Works well with high-dimensional data
+❌ Cons:
+Assumes features are independent (rare in real life)
+Doesn’t handle feature interaction well
