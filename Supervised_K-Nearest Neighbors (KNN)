@@ -1,0 +1,53 @@
+What It Is:
+A supervised learning algorithm used for classification (and also regression).
+It predicts the class of a new data point by looking at the 'K' closest data points (neighbors) in the training data.
+It works by majority voting among neighbors.
+    No training step — it stores the data and compares during prediction. Hence called a "lazy learner."
+
+Real-Life Example:
+Predicting your favorite ice cream flavor based on what your closest friends (with similar tastes) like.
+Imagine you just met someone new and want to guess if they'll like chocolate or vanilla:
+
+You ask their 3 closest friends (K=3).
+If 2 out of 3 like chocolate → You predict "chocolate."
+
+CODE : 
+from sklearn.neighbors import KNeighborsClassifier
+
+# Features (e.g., age)
+X = [[1], [2], [3], [4]]
+
+# Labels (e.g., child or teen)
+y = ['child', 'child', 'teen', 'teen']
+
+# Create the model with K=2
+model = KNeighborsClassifier(n_neighbors=2)
+model.fit(X, y)
+
+# Predict for age 3
+prediction = model.predict([[3]])
+print(f"Predicted class for age 3: {prediction[0]}")
+OUPTUT:Predicted class for age 3: teen
+Category
+(child)    *       *
+             \
+              \     (← You → Age 3)  
+               \
+(teen)          *       *
+
+           1     2     3     4     Age →
+
+Pros and Cons:
+Pros	Cons
+Simple and intuitive	Slow for large datasets
+No training needed	Needs good feature scaling
+Flexible (works for classification & regression)	Sensitive to irrelevant features
+🔧 Key Parameters:
+K (n_neighbors): Number of neighbors to consider
+Small k → more flexible, may overfit
+Large k → smoother boundaries, may underfit
+Distance metric: usually Euclidean distance, but can be others like Manhattan
+
+
+
+
