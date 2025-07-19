@@ -1,0 +1,23 @@
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+🔍 What it is:
+
+Finds clusters based on density (many nearby points).
+Labels low-density points as noise/outliers.
+No need to predefine number of clusters.
+📈 Diagram:
+
+    Cluster 1     Noise    Cluster 2
+    ● ● ● ●        x       ◯ ◯ ◯ ◯
+🌍 Real-life Example:
+
+Detecting anomalies in network traffic.
+Identifying groups of friends at school; "loners" are outliers.
+👨‍💻 Code:
+
+from sklearn.cluster import DBSCAN
+
+X = [[1], [2], [3], [10], [11], [12], [100]]  # 100 is an outlier
+model = DBSCAN(eps=2)
+model.fit(X)
+
+print("Labels:", model.labels_)  # [-1 means outlier]
