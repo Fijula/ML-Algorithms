@@ -1,0 +1,33 @@
+ Gradient Boosting (e.g., XGBoost, LightGBM, AdaBoost)
+
+🔍 What It Is:
+An ensemble method that combines many weak learners (usually shallow decision trees).
+Each new model fixes the mistakes of the previous one.
+"Boosting" = sequential learning.
+💡 Real-Life Example:
+You try multiple ways to study: flashcards fail, so next time you revise with notes. Then practice tests. You combine these strategies for the best result.
+✅ Python Code:
+from sklearn.ensemble import GradientBoostingClassifier
+
+X = [[1,20],[2,21],[3,22]]
+y = [0,1,0]
+
+model = GradientBoostingClassifier()
+model.fit(X, y)
+
+print(model.predict([[2, 20]]))  # Predicts class
+🔁 How It Works (Visual):
+ Model 1: predicts → wrong
+        ⬇
+ Model 2: focuses on fixing Model 1's errors
+        ⬇
+ Model 3: improves further
+ Final Output = Combined Prediction (better accuracy)
+✅ Pros:
+High accuracy
+Robust to outliers
+Can handle mixed data types
+❌ Cons:
+Slower to train
+Prone to overfitting if not tuned well
+More complex to interpret
