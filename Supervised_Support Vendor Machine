@@ -1,0 +1,28 @@
+🔍 What It Is:
+Finds the best possible boundary (hyperplane) that separates classes.
+Maximizes the margin between categories.
+💡 Real-Life Example:
+You place a straight divider on a table to separate apples from oranges with the largest gap from both sides.
+✅ Python Code:
+from sklearn import svm
+
+X = [[1,1],[1,0],[0,1],[0,0]]
+y = [1, 0, 1, 0]  # Binary labels
+
+model = svm.SVC()
+model.fit(X, y)
+
+print(model.predict([[0, 1]]))  # Predicts 1
+📐 Diagram:
+ Class 0: o     o
+            ↕  <--- Margin
+ --------------------- ← Decision boundary
+            ↕
+ Class 1: x     x
+✅ Pros:
+Very effective for high-dimensional data
+Works well with clear margin separation
+❌ Cons:
+Not ideal for large datasets
+Requires feature scaling
+Doesn’t work well with noisy data
