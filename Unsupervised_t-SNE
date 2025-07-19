@@ -1,0 +1,26 @@
+t-SNE (t-distributed Stochastic Neighbor Embedding)
+🔍 What it is:
+
+Reduces complexity of high-dimensional data for visualization, preserving local relationships.
+Better than PCA for visualizing clusters.
+📈 Diagram:
+
+From a mess:
+
+●●●●●●◯◯◯◯◯◯
+To a meaningful 2D map:
+
+Cluster A     Cluster B
+●●●●●         ◯◯◯◯◯
+🌍 Real-life Example:
+
+Visualizing handwritten digits, grouping similar ones together.
+Mapping genomic data into patterns.
+👨‍💻 Code:
+
+from sklearn.manifold import TSNE
+import numpy as np
+
+X = np.random.rand(10, 5)
+tsne = TSNE(n_components=2)
+print("2D Representation:", tsne.fit_transform(X))
