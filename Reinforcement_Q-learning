@@ -1,0 +1,12 @@
+🔍 What it is:
+
+Uses a Q-table to track the reward for each action in each state.
+Learns optimal actions through trial and error.
+🌍 Real-life Example:
+
+A robot learning to escape a maze.
+Self-driving car learning to drive.
+👨‍💻 Code:
+
+# Simplified logic
+Q[state][action] = Q[state][action] + learning_rate * (reward + discount * max(Q[next_state]) - Q[state][action])
