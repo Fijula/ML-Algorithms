@@ -1,0 +1,12 @@
+Deep Q-Network (DQN)
+🔍 What it is:
+
+Q-Learning but instead of a table, it uses a Neural Network to estimate rewards.
+Handles complex states like video games, images, etc.
+🌍 Real-life Example:
+
+AI playing Atari games.
+Robots learning to walk or balance.
+Diagram:
+
+State (Image) → Deep Neural Network → Action → Reward → Learn
