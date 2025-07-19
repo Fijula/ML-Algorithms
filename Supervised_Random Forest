@@ -1,0 +1,31 @@
+ What It Is:
+An ensemble method: combines many decision trees.
+Each tree gives a prediction; the final output is decided by majority vote.
+Reduces overfitting compared to a single decision tree.
+💡 Real-Life Example:
+Instead of trusting one friend's advice, you ask multiple friends. Each gives their opinion, and you go with the majority.
+
+✅ Python Code:
+from sklearn.ensemble import RandomForestClassifier
+
+# Example: Cloudy & Rain data from Decision Tree
+X = [[1,1],[1,0],[0,1],[0,0]]
+y = ['yes','no','yes','no']
+
+model = RandomForestClassifier()
+model.fit(X, y)
+
+print(model.predict([[1, 1]]))  # Should say 'yes'
+🌲 Diagram:
+ Tree 1: says YES
+ Tree 2: says YES
+ Tree 3: says NO
+ Tree 4: says YES
+ Final Vote → YES (majority)
+✅ Pros:
+High accuracy
+Handles missing values
+Reduces overfitting
+❌ Cons:
+Slower for large datasets
+Less interpretable than a single tree
