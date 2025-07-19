@@ -1,0 +1,31 @@
+🔍 What it is:
+A basic neural network that mimics how the brain works using:
+
+Input layer
+Hidden layer(s) — where computations happen
+Output layer
+Each neuron (node) processes inputs with weights and biases and passes through an activation function (like ReLU or sigmoid).
+
+🧠 Diagram:
+INPUT → HIDDEN LAYER(S) → OUTPUT
+ [x1,x2]     [h1,h2,h3]      [y]
+🌍 Real-life Examples:
+Handwritten digit recognition (MNIST)
+House price prediction
+Credit risk scoring
+Stock price forecasting
+👨‍💻 Python Code:
+from sklearn.neural_network import MLPClassifier
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+
+X, y = load_digits(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+
+model = MLPClassifier(hidden_layer_sizes=(50,))
+model.fit(X_train, y_train)
+
+print("Accuracy:", model.score(X_test, y_test))
+✅ When to Use:
+Tabular data
+You need a general-purpose learning model
